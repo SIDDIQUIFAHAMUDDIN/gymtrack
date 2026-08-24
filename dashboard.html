@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                GYM<span>TRACK</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="navLinks" class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="workouts.html">
+                    Workouts
+                </a>
+
+                <a href="progress.html">
+                    Progress
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="exercise.html">
+                    Exercise
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+                
+                <a href="diet.html">
+                    diet
+                </a>
+                 <a href="quotes.html">
+            quotes
+         </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Dashboard Header -->
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="badge">
+                    DASHBOARD
+                </span>
+
+                <h2>
+                    Welcome,
+                    <span id="dashboardName">
+                        Gym Member
+                    </span>
+                </h2>
+
+                <p class="muted">
+                    Here's your training overview.
+                </p>
+
+            </div>
+
+
+            <a
+                href="workouts.html"
+                class="btn btn-primary"
+            >
+                Start Workout
+            </a>
+
+        </div>
+
+
+        <!-- ================= STAT CARDS ================= -->
+
+        <div class="grid grid-4">
+
+
+            <!-- Workouts -->
+
+            <div class="card">
+
+                <div class="icon-box">
+                    🏋️
+                </div>
+
+                <div class="stat-label">
+                    Total Workouts
+                </div>
+
+                <div
+                    id="statWorkouts"
+                    class="stat-number"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- Streak -->
+
+            <div class="card">
+
+                <div class="icon-box">
+                    🔥
+                </div>
+
+                <div class="stat-label">
+                    Workout Streak
+                </div>
+
+                <div
+                    id="statStreak"
+                    class="stat-number"
+                >
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- Weight -->
+
+            <div class="card">
+
+                <div class="icon-box">
+                    ⚖️
+                </div>
+
+                <div class="stat-label">
+                    Current Weight
+                </div>
+
+                <div
+                    id="statWeight"
+                    class="stat-number"
+                >
+                    55 kg
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="card">
+
+                <div class="icon-box">
+                    📈
+                </div>
+
+                <div class="stat-label">
+                    Progress Logs
+                </div>
+
+                <div
+                    id="statProgress"
+                    class="stat-number"
+                >
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RECENT WORKOUTS ================= -->
+
+        <section style="margin-top: 35px;">
+
+            <div class="section-head">
+
+                <div>
+
+                    <h2>
+                        Recent Workouts
+                    </h2>
+
+                    <p class="muted">
+                        Your latest training sessions.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="history.html"
+                    class="btn btn-secondary"
+                >
+                    View History
+                </a>
+
+            </div>
+
+
+            <!-- JavaScript inserts history here -->
+
+            <div
+                id="recentWorkouts"
+                class="list"
+            >
+
+                <div class="empty">
+                    No workouts completed yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            GYMTRACK • Train smart. Track progress.
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

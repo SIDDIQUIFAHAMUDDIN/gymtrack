@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | Train. Track. Transform.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           HOME PAGE ONLY
+        ========================================= */
+
+        .home-page {
+            width: 100%;
+        }
+
+        /* HERO */
+
+        .home-hero {
+            min-height: 650px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,0.98) 0%,
+                    rgba(5,5,5,0.92) 38%,
+                    rgba(5,5,5,0.55) 65%,
+                    rgba(5,5,5,0.25) 100%
+                ),
+                url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,0.25),
+                    transparent 45%,
+                    rgba(0,0,0,0.85)
+                );
+
+            pointer-events: none;
+        }
+
+        .home-content {
+            width: min(1180px, 90%);
+            margin: auto;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: #ff3038;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-small::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: #e50914;
+        }
+
+        .home-title {
+            max-width: 700px;
+
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 0.98;
+
+            font-weight: 900;
+            letter-spacing: -3px;
+
+            color: white;
+
+            margin-bottom: 22px;
+        }
+
+        .home-title span {
+            color: #e50914;
+        }
+
+        .home-description {
+            max-width: 560px;
+
+            color: #c5c5c5;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .home-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .home-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 24px;
+
+            border-radius: 9px;
+
+            background: #e50914;
+            color: white;
+
+            font-weight: 800;
+
+            box-shadow: 0 10px 30px rgba(229,9,20,0.3);
+
+            transition: 0.25s;
+        }
+
+        .home-primary:hover {
+            background: #ff2631;
+            transform: translateY(-3px);
+        }
+
+        .home-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 24px;
+
+            border-radius: 9px;
+
+            background: rgba(20,20,20,0.75);
+            border: 1px solid rgba(255,255,255,0.2);
+
+            color: white;
+
+            font-weight: 700;
+
+            backdrop-filter: blur(8px);
+
+            transition: 0.25s;
+        }
+
+        .home-secondary:hover {
+            border-color: #e50914;
+            transform: translateY(-3px);
+        }
+
+        /* HERO STATS */
+
+        .hero-stats {
+            display: flex;
+            gap: 35px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            border-left: 2px solid #e50914;
+            padding-left: 14px;
+        }
+
+        .hero-stat strong {
+            display: block;
+
+            color: white;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .hero-stat small {
+            color: #888;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* FEATURES */
+
+        .home-section {
+            width: min(1180px, 90%);
+            margin: 70px auto;
+        }
+
+        .home-section-heading {
+            margin-bottom: 30px;
+        }
+
+        .home-section-heading span {
+            color: #e50914;
+
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .home-section-heading h2 {
+            margin-top: 8px;
+            font-size: 36px;
+        }
+
+        .home-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .home-feature {
+            display: block;
+
+            padding: 25px;
+
+            background: #181818;
+
+            border: 1px solid #292929;
+            border-radius: 14px;
+
+            transition: 0.25s;
+        }
+
+        .home-feature:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229,9,20,0.5);
+            background: #1d1d1d;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: rgba(229,9,20,0.1);
+            border: 1px solid rgba(229,9,20,0.2);
+
+            font-size: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .home-feature h3 {
+            margin-bottom: 8px;
+        }
+
+        .home-feature p {
+            font-size: 13px;
+        }
+
+        /* CTA */
+
+        .home-cta {
+            width: min(1180px, 90%);
+            margin: 80px auto;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 55px 40px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(229,9,20,0.3);
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(229,9,20,0.16),
+                    transparent 60%
+                ),
+                #151515;
+        }
+
+        .home-cta h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .home-cta p {
+            max-width: 550px;
+            margin: 0 auto 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .home-feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home-hero {
+                min-height: 620px;
+
+                background-position:
+                    65% center;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .home-hero {
+                min-height: 650px;
+
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(5,5,5,0.94),
+                        rgba(5,5,5,0.65)
+                    ),
+                    url("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=85");
+
+                background-size: cover;
+                background-position: 65% center;
+            }
+
+            .home-content {
+                width: 92%;
+            }
+
+            .home-title {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .home-description {
+                font-size: 15px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .home-feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-section,
+            .home-cta {
+                width: 92%;
+            }
+
+            .home-cta {
+                padding: 40px 20px;
+            }
+
+            .home-cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">
+            GYM<span>TRACk</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html" class="active">
+                Home
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="workouts.html">
+                Workouts
+            </a>
+
+            <a href="diet.html">
+                Diet
+            </a>
+
+            <a href="progress.html">
+                Progress
+            </a>
+
+            <a href="planner.html">
+                Planner
+            </a>
+
+            <a href="history.html">
+                History
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+            <a href="quotes.html">
+            quotes
+         </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HOME HERO ================= -->
+
+<main class="home-page">
+
+    <section class="home-hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="hero-small">
+                PERSONAL FITNESS TRACKER
+            </div>
+
+            <h1 class="home-title">
+                BUILD YOUR
+                <span>STRONGEST</span>
+                SELF.
+            </h1>
+
+            <p class="home-description">
+                Plan your workouts, track every improvement,
+                manage your nutrition and stay consistent —
+                all from one powerful fitness dashboard.
+            </p>
+
+            <div class="home-buttons">
+
+                <a
+                    href="dashboard.html"
+                    class="home-primary"
+                >
+                    Open Dashboard →
+                </a>
+
+                <a
+                    href="workout.html"
+                    class="home-secondary"
+                >
+                    Start Workout
+                </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <strong>50+</strong>
+                    <small>EXERCISES</small>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>7</strong>
+                    <small>TRACKING TOOLS</small>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>24/7</strong>
+                    <small>YOUR PROGRESS</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="home-section">
+
+        <div class="home-section-heading">
+
+            <span>EVERYTHING IN ONE PLACE</span>
+
+            <h2>
+                Your Fitness Command Center
+            </h2>
+
+        </div>
+
+
+        <div class="home-feature-grid">
+
+
+            <a
+                href="workout.html"
+                class="home-feature"
+            >
+
+                <div class="feature-icon">
+                    💪
+                </div>
+
+                <h3>
+                    Workouts
+                </h3>
+
+                <p>
+                    Find exercises for different
+                    muscle groups and build your
+                    training routine.
+                </p>
+
+            </a>
+
+
+            <a
+                href="progress.html"
+                class="home-feature"
+            >
+
+                <div class="feature-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Progress
+                </h3>
+
+                <p>
+                    Keep track of your fitness
+                    improvements over time.
+                </p>
+
+            </a>
+
+
+            <a
+                href="diet.html"
+                class="home-feature"
+            >
+
+                <div class="feature-icon">
+                    🥗
+                </div>
+
+                <h3>
+                    Nutrition
+                </h3>
+
+                <p>
+                    Explore foods and monitor
+                    your daily nutrition.
+                </p>
+
+            </a>
+
+
+            <a
+                href="planner.html"
+                class="home-feature"
+            >
+
+                <div class="feature-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Planner
+                </h3>
+
+                <p>
+                    Organize your weekly training
+                    schedule and stay consistent.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="home-cta">
+
+        <div class="hero-small"
+             style="justify-content:center;">
+            NO EXCUSES. JUST PROGRESS.
+        </div>
+
+        <h2>
+            Ready to Train?
+        </h2>
+
+        <p>
+            Start your workout, track your progress
+            and make every session count.
+        </p>
+
+        <a
+            href="workout.html"
+            class="home-primary"
+        >
+            Start Training →
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <span>GYMTRACK</span>
+        — Train. Track. Transform.
+    </p>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | Planner</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                GYM<span>TRACK</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="navLinks" class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="workouts.html">
+                    Workouts
+                </a>
+
+                <a href="progress.html">
+                    Progress
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="exercise.html">
+                    Exercise
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+                
+                <a href="diet.html">
+                    diet
+                </a>
+                 <a href="quotes.html">
+            quotes
+         </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Page Header -->
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="badge">
+                    PLANNER
+                </span>
+
+                <h2>
+                    Weekly Workout Planner
+                </h2>
+
+                <p class="muted">
+                    Create and manage your weekly workout schedule.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ADD PLAN FORM ================= -->
+
+        <form
+            id="plannerForm"
+            class="card form-grid"
+        >
+
+            <!-- Day -->
+
+            <div class="form-group">
+
+                <label for="plannerDay">
+                    Day
+                </label>
+
+                <select id="plannerDay">
+
+                    <option value="Monday">
+                        Monday
+                    </option>
+
+                    <option value="Tuesday">
+                        Tuesday
+                    </option>
+
+                    <option value="Wednesday">
+                        Wednesday
+                    </option>
+
+                    <option value="Thursday">
+                        Thursday
+                    </option>
+
+                    <option value="Friday">
+                        Friday
+                    </option>
+
+                    <option value="Saturday">
+                        Saturday
+                    </option>
+
+                    <option value="Sunday">
+                        Sunday
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Workout -->
+
+            <div class="form-group">
+
+                <label for="plannerWorkout">
+                    Workout
+                </label>
+
+                <select id="plannerWorkout">
+
+                    <option value="Chest">
+                        Chest
+                    </option>
+
+                    <option value="Back">
+                        Back
+                    </option>
+
+                    <option value="Shoulders">
+                        Shoulders
+                    </option>
+
+                    <option value="Arms">
+                        Arms
+                    </option>
+
+                    <option value="Legs">
+                        Legs
+                    </option>
+
+                    <option value="Abs">
+                        Abs
+                    </option>
+
+                    <option value="Rest">
+                        Rest
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Add Button -->
+
+            <div class="form-group full">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    + Add to Planner
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- ================= PLANNER LIST ================= -->
+
+        <section style="margin-top: 25px;">
+
+            <div
+                id="plannerList"
+                class="list"
+            >
+
+                <!-- JavaScript will generate
+                     planner items here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            GYMTRACK • Train smart. Track progress.
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

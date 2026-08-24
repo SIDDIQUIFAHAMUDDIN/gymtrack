@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | Gym Quotes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ===============================
+           QUOTES PAGE
+        =============================== */
+
+        .quotes-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .quotes-hero {
+            text-align: center;
+            padding: 45px 20px;
+            margin-bottom: 40px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,138,61,0.13),
+                    transparent 65%
+                ),
+                #181818;
+
+            border: 1px solid #333;
+            border-radius: 18px;
+        }
+
+        .quotes-hero span {
+            color: #ff8a3d;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .quotes-hero h1 {
+            margin: 12px 0;
+            font-size: 48px;
+        }
+
+        .quotes-hero h1 strong {
+            color: #ff8a3d;
+        }
+
+        .quotes-hero p {
+            max-width: 600px;
+            margin: auto;
+        }
+
+
+        /* ===============================
+           RANDOM QUOTE
+        =============================== */
+
+        .random-quote {
+            text-align: center;
+            background: #1b1b1b;
+
+            border: 1px solid #333;
+            border-radius: 16px;
+
+            padding: 35px;
+            margin-bottom: 40px;
+        }
+
+        .quote-symbol {
+            color: #ff8a3d;
+            font-size: 65px;
+            font-family: Georgia, serif;
+            height: 55px;
+        }
+
+        #randomQuote {
+            max-width: 800px;
+            margin: 15px auto 25px;
+
+            font-size: 25px;
+            line-height: 1.5;
+
+            color: white;
+        }
+
+        .quote-author {
+            color: #777;
+            margin-bottom: 22px;
+        }
+
+        .quote-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+
+        /* ===============================
+           CATEGORY BUTTONS
+        =============================== */
+
+        .quote-categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .quote-category {
+            background: #222;
+            color: #bbb;
+
+            border: 1px solid #444;
+
+            padding: 10px 17px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+        .quote-category:hover,
+        .quote-category.active {
+            background: #ff8a3d;
+            color: white;
+            border-color: #ff8a3d;
+        }
+
+
+        /* ===============================
+           QUOTE GRID
+        =============================== */
+
+        .quotes-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .quote-card {
+            position: relative;
+
+            background: #1b1b1b;
+
+            border: 1px solid #333;
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            min-height: 210px;
+
+            transition: .25s;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #ff8a3d;
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,.3);
+        }
+
+        .quote-card-symbol {
+            color: #ff8a3d;
+
+            font-size: 45px;
+
+            font-family: Georgia, serif;
+        }
+
+        .quote-card p {
+            color: #eee;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            margin: 5px 0 20px;
+        }
+
+        .quote-card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quote-type {
+            color: #777;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .favorite-btn {
+            background: transparent;
+            border: none;
+
+            color: #777;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            padding: 4px;
+        }
+
+        .favorite-btn:hover {
+            color: #ff8a3d;
+            transform: scale(1.15);
+        }
+
+
+        /* ===============================
+           MOBILE
+        =============================== */
+
+        @media(max-width: 900px) {
+
+            .quotes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            .quotes-page {
+                width: 94%;
+                padding: 30px 0;
+            }
+
+            .quotes-hero h1 {
+                font-size: 38px;
+            }
+
+            #randomQuote {
+                font-size: 20px;
+            }
+
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ===============================
+     NAVBAR
+=============================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">
+            GYM<span>TRACK</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="workout.html">
+                Workouts
+            </a>
+
+            <a href="exercise.html">
+                Exercises
+            </a>
+
+            <a href="diet.html">
+                Diet
+            </a>
+
+            <a href="progress.html">
+                Progress
+            </a>
+
+            <a href="planner.html">
+                Planner
+            </a>
+
+            <a href="history.html">
+                History
+            </a>
+
+            <a href="quotes.html" class="active">
+                Quotes
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ===============================
+     MAIN
+=============================== -->
+
+<main class="quotes-page">
+
+
+    <!-- HERO -->
+
+    <section class="quotes-hero">
+
+        <span>
+            DAILY MOTIVATION
+        </span>
+
+        <h1>
+            TRAIN YOUR
+            <strong>MIND.</strong>
+        </h1>
+
+        <p>
+            Stay focused, stay disciplined and keep
+            moving forward. Your journey starts with
+            one decision.
+        </p>
+
+    </section>
+
+
+    <!-- RANDOM QUOTE -->
+
+    <section class="random-quote">
+
+        <div class="quote-symbol">
+            “
+        </div>
+
+        <h2 id="randomQuote">
+            Discipline will take you where
+            motivation can't.
+        </h2>
+
+        <div class="quote-author">
+            — GymTrack
+        </div>
+
+        <div class="quote-actions">
+
+            <button onclick="newQuote()">
+                ⚡ New Quote
+            </button>
+
+            <button
+                class="home-secondary"
+                onclick="copyQuote()"
+            >
+                📋 Copy
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="quote-categories">
+
+        <button
+            class="quote-category active"
+            onclick="filterQuotes('all', this)"
+        >
+            All
+        </button>
+
+        <button
+            class="quote-category"
+            onclick="filterQuotes('discipline', this)"
+        >
+            Discipline
+        </button>
+
+        <button
+            class="quote-category"
+            onclick="filterQuotes('motivation', this)"
+        >
+            Motivation
+        </button>
+
+        <button
+            class="quote-category"
+            onclick="filterQuotes('strength', this)"
+        >
+            Strength
+        </button>
+
+        <button
+            class="quote-category"
+            onclick="filterQuotes('consistency', this)"
+        >
+            Consistency
+        </button>
+
+    </div>
+
+
+    <!-- QUOTES -->
+
+    <section class="quotes-grid" id="quotesGrid">
+
+    </section>
+
+
+</main>
+
+
+<!-- ===============================
+     FOOTER
+=============================== -->
+
+<footer>
+
+    <p>
+        © 2026
+        <span>GYMTRACK</span>
+        — Train. Track. Transform.
+    </p>
+
+</footer>
+
+
+<!-- ===============================
+     JAVASCRIPT
+=============================== -->
+
+<script>
+
+const quotes = [
+
+    {
+        text:
+        "Discipline will take you where motivation can't.",
+        category: "discipline"
+    },
+
+    {
+        text:
+        "Consistency beats perfection.",
+        category: "consistency"
+    },
+
+    {
+        text:
+        "Your only competition is who you were yesterday.",
+        category: "motivation"
+    },
+
+    {
+        text:
+        "Every rep is another step forward.",
+        category: "strength"
+    },
+
+    {
+        text:
+        "Small progress every day becomes massive progress.",
+        category: "consistency"
+    },
+
+    {
+        text:
+        "Don't wait for motivation. Build discipline.",
+        category: "discipline"
+    },
+
+    {
+        text:
+        "Strong body. Strong mind.",
+        category: "strength"
+    },
+
+    {
+        text:
+        "Keep showing up. Results take time.",
+        category: "consistency"
+    },
+
+    {
+        text:
+        "The hardest part is starting. Start anyway.",
+        category: "motivation"
+    },
+
+    {
+        text:
+        "Train hard. Recover well. Repeat.",
+        category: "strength"
+    },
+
+    {
+        text:
+        "Your future self will thank you.",
+        category: "motivation"
+    },
+
+    {
+        text:
+        "No shortcuts. Just consistent work.",
+        category: "discipline"
+    },
+
+    {
+        text:
+        "One workout won't change everything. Consistency will.",
+        category: "consistency"
+    },
+
+    {
+        text:
+        "Make today's workout count.",
+        category: "motivation"
+    },
+
+    {
+        text:
+        "Strength is built one session at a time.",
+        category: "strength"
+    },
+
+    {
+        text:
+        "Stay focused on the process.",
+        category: "discipline"
+    }
+
+];
+
+
+let currentQuotes = quotes;
+
+
+/* ===============================
+   DISPLAY QUOTES
+=============================== */
+
+function displayQuotes(list) {
+
+    const grid =
+        document.getElementById("quotesGrid");
+
+    grid.innerHTML = "";
+
+    list.forEach(function(quote, index) {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "quote-card";
+
+        card.innerHTML = `
+
+            <div class="quote-card-symbol">
+                “
+            </div>
+
+            <p>
+                ${quote.text}
+            </p>
+
+            <div class="quote-card-bottom">
+
+                <span class="quote-type">
+                    ${quote.category.toUpperCase()}
+                </span>
+
+                <button
+                    class="favorite-btn"
+                    onclick="favoriteQuote('${quote.text}')"
+                >
+                    ♡
+                </button>
+
+            </div>
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+/* ===============================
+   RANDOM QUOTE
+=============================== */
+
+function newQuote() {
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            currentQuotes.length
+        );
+
+    const selected =
+        currentQuotes[randomIndex];
+
+    document.getElementById("randomQuote")
+        .textContent = selected.text;
+
+}
+
+
+/* ===============================
+   FILTER
+=============================== */
+
+function filterQuotes(category, button) {
+
+    document
+        .querySelectorAll(".quote-category")
+        .forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+    button.classList.add("active");
+
+
+    if(category === "all") {
+
+        currentQuotes = quotes;
+
+    } else {
+
+        currentQuotes =
+            quotes.filter(function(quote) {
+
+                return quote.category === category;
+
+            });
+
+    }
+
+    displayQuotes(currentQuotes);
+
+    newQuote();
+
+}
+
+
+/* ===============================
+   COPY
+=============================== */
+
+function copyQuote() {
+
+    const text =
+        document.getElementById("randomQuote")
+        .textContent;
+
+    navigator.clipboard.writeText(text);
+
+}
+
+
+/* ===============================
+   FAVORITE
+=============================== */
+
+function favoriteQuote(text) {
+
+    let favorites =
+        JSON.parse(
+            localStorage.getItem("gymQuotes")
+        ) || [];
+
+    if(!favorites.includes(text)) {
+
+        favorites.push(text);
+
+        localStorage.setItem(
+            "gymQuotes",
+            JSON.stringify(favorites)
+        );
+
+        alert("Quote saved to favorites ❤️");
+
+    } else {
+
+        alert("Already in your favorites.");
+
+    }
+
+}
+
+
+/* ===============================
+   INITIAL LOAD
+=============================== */
+
+displayQuotes(quotes);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | History</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                GYM<span>TRACK</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="navLinks" class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="workouts.html">
+                    Workouts
+                </a>
+
+                <a href="progress.html">
+                    Progress
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="exercise.html">
+                    Exercises
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+                
+                <a href="diet.html">
+                    diet
+                </a>
+                 <a href="quotes.html">
+            quotes
+         </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Page Header -->
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="badge">
+                    HISTORY
+                </span>
+
+                <h2>
+                    Workout History
+                </h2>
+
+                <p class="muted">
+                    Every workout you save will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- Clear History Button -->
+
+            <button
+                id="clearHistory"
+                class="btn btn-danger"
+            >
+                Clear History
+            </button>
+
+        </div>
+
+
+        <!-- ================= HISTORY LIST ================= -->
+
+        <section>
+
+            <div
+                id="historyList"
+                class="list"
+            >
+
+                <!-- JavaScript will insert
+                     workout history here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            GYMTRACK • Train smart. Track progress.
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

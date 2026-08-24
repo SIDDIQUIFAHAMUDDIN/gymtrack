@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | Progress</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                GYM<span>TRACK</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="navLinks" class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="workouts.html">
+                    Workouts
+                </a>
+
+                <a href="progress.html">
+                    Progress
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="exercise.html">
+                    Exercise
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+                
+                <a href="diet.html">
+                    diet
+                </a>
+                 <a href="quotes.html">
+            quotes
+         </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Page Header -->
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="badge">
+                    PROGRESS
+                </span>
+
+                <h2>
+                    Track Your Progress
+                </h2>
+
+                <p class="muted">
+                    Record your bodyweight and monitor your progress over time.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PROGRESS TOP SECTION ================= -->
+
+        <div class="grid grid-2">
+
+
+            <!-- Add Progress -->
+
+            <form
+                id="progressForm"
+                class="card form-grid"
+            >
+
+                <div class="form-group full">
+
+                    <label for="progressWeight">
+                        Current Weight (kg)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="progressWeight"
+                        placeholder="Example: 55"
+                        min="1"
+                        step="0.1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        + Save Progress
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Progress Indicator -->
+
+            <div class="card">
+
+                <h3>
+                    Progress Indicator
+                </h3>
+
+                <p class="muted">
+                    Your latest recorded weight.
+                </p>
+
+
+                <div class="progress-wrap">
+
+                    <div
+                        id="progressFill"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= WEIGHT HISTORY ================= -->
+
+        <section style="margin-top: 35px;">
+
+            <div class="section-head">
+
+                <div>
+
+                    <h2>
+                        Weight History
+                    </h2>
+
+                    <p class="muted">
+                        Your previous progress entries.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="progressList"
+                class="list"
+            >
+
+                <!-- JavaScript will insert
+                     progress entries here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            GYMTRACK • Train smart. Track progress.
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

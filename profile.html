@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GymTrack | Profile</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <!-- Logo -->
+            <a class="logo" href="index.html">
+                GYM<span>TRACK</span>
+            </a>
+
+            <!-- Mobile Menu -->
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="navLinks" class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="workouts.html">
+                    Workouts
+                </a>
+
+                <a href="progress.html">
+                    Progress
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="exercise.html">
+                    Exercises
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+                
+                <a href="diet.html">
+                    diet
+                </a>
+                 <a href="quotes.html">
+            quotes
+         </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Page Heading -->
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="badge">
+                    PROFILE
+                </span>
+
+                <h2>
+                    Your Profile
+                </h2>
+
+                <p class="muted">
+                    Keep your personal training information updated.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PROFILE FORM ================= -->
+
+        <form id="profileForm" class="card form-grid">
+
+
+            <!-- Name -->
+
+            <div class="form-group">
+
+                <label for="profileName">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="profileName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Age -->
+
+            <div class="form-group">
+
+                <label for="profileAge">
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="profileAge"
+                    placeholder="Enter your age"
+                    min="1"
+                >
+
+            </div>
+
+
+            <!-- Weight -->
+
+            <div class="form-group">
+
+                <label for="profileWeight">
+                    Weight (kg)
+                </label>
+
+                <input
+                    type="number"
+                    id="profileWeight"
+                    placeholder="Enter your weight"
+                    min="1"
+                    step="0.1"
+                >
+
+            </div>
+
+
+            <!-- Height -->
+
+            <div class="form-group">
+
+                <label for="profileHeight">
+                    Height (cm)
+                </label>
+
+                <input
+                    type="number"
+                    id="profileHeight"
+                    placeholder="Enter your height"
+                    min="1"
+                >
+
+            </div>
+
+
+            <!-- Goal -->
+
+            <div class="form-group">
+
+                <label for="profileGoal">
+                    Fitness Goal
+                </label>
+
+                <select id="profileGoal">
+
+                    <option value="Build Muscle">
+                        Build Muscle
+                    </option>
+
+                    <option value="Improve Strength">
+                        Improve Strength
+                    </option>
+
+                    <option value="General Fitness">
+                        General Fitness
+                    </option>
+
+                    <option value="Improve Endurance">
+                        Improve Endurance
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Save Button -->
+
+            <div
+                class="form-group"
+                style="justify-content: end;"
+            >
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Save Profile
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- ================= DANGER ZONE ================= -->
+
+        <div
+            class="card"
+            style="margin-top: 20px;"
+        >
+
+            <h3>
+                Danger Zone
+            </h3>
+
+            <p class="muted">
+                Reset all saved GymTrack data from this browser.
+            </p>
+
+            <button
+                id="resetData"
+                class="btn btn-danger"
+                style="margin-top: 12px;"
+            >
+                Reset All Data
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            GYMTRACK • Train smart. Track progress.
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

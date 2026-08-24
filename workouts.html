@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GymTrack | Workouts</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                GYM<span>TRACK</span>
+            </a>
+
+
+            <!-- Mobile menu -->
+            <button
+                id="menuBtn"
+                class="menu-btn"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <!-- Navigation -->
+            <nav
+                id="navLinks"
+                class="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="workouts.html">
+                    Workouts
+                </a>
+
+                <a href="progress.html">
+                    Progress
+                </a>
+
+                <a href="planner.html">
+                    Planner
+                </a>
+
+                <a href="history.html">
+                    History
+                </a>
+
+                <a href="exercise.html">
+                    Exercise
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+                
+                <a href="diet.html">
+                    diet
+                </a>
+                 <a href="quotes.html">
+            quotes
+         </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="badge">
+                    WORKOUTS
+                </span>
+
+                <h2 id="workoutTitle">
+                    Chest Workout
+                </h2>
+
+                <p
+                    id="workoutInfo"
+                    class="muted"
+                >
+                    Choose a muscle group to start.
+                </p>
+
+            </div>
+
+
+            <button
+                id="startWorkout"
+                class="btn btn-primary"
+                type="button"
+            >
+                Save Workout
+            </button>
+
+        </div>
+
+
+        <!-- ================= MUSCLE GROUPS ================= -->
+
+        <div class="card">
+
+            <h3>
+                Choose Muscle Group
+            </h3>
+
+            <p class="muted">
+                Select a muscle group below.
+            </p>
+
+
+            <div class="muscle-buttons">
+
+
+                <button
+                    type="button"
+                    class="muscle-btn active"
+                    data-workout="chest"
+                >
+                    Chest
+                </button>
+
+
+                <button
+                    type="button"
+                    class="muscle-btn"
+                    data-workout="back"
+                >
+                    Back
+                </button>
+
+
+                <button
+                    type="button"
+                    class="muscle-btn"
+                    data-workout="shoulders"
+                >
+                    Shoulders
+                </button>
+
+
+                <button
+                    type="button"
+                    class="muscle-btn"
+                    data-workout="biceps"
+                >
+                    Biceps
+                </button>
+
+
+                <button
+                    type="button"
+                    class="muscle-btn"
+                    data-workout="triceps"
+                >
+                    Triceps
+                </button>
+
+
+                <button
+                    type="button"
+                    class="muscle-btn"
+                    data-workout="legs"
+                >
+                    Legs
+                </button>
+
+
+                <button
+                    type="button"
+                    class="muscle-btn"
+                    data-workout="abs"
+                >
+                    Abs
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= EXERCISES ================= -->
+
+        <section style="margin-top: 28px;">
+
+            <div class="section-head">
+
+                <div>
+
+                    <h2>
+                        Today's Exercises
+                    </h2>
+
+                    <p class="muted">
+                        Tap ✓ when you complete an exercise.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!--
+                IMPORTANT:
+                app.js uses this exact ID.
+            -->
+
+            <div
+                id="exerciseList"
+                class="exercise-list"
+            >
+
+                <div class="empty">
+                    Loading workout...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SAVE AREA ================= -->
+
+        <div
+            class="card"
+            style="margin-top: 28px; text-align: center;"
+        >
+
+            <h3>
+                Finished your workout?
+            </h3>
+
+            <p
+                class="muted"
+                style="margin-bottom: 16px;"
+            >
+                Save this session to your workout history.
+            </p>
+
+
+            <button
+                id="startWorkout"
+                class="btn btn-primary"
+                type="button"
+                onclick="saveCurrentWorkout()"
+            >
+                ✓ Save Workout
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            GYMTRACK • Train smart. Track progress.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
